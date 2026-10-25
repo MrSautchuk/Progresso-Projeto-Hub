@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progresso & Conformidade — Hub Central (Web III FATEC)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Top Bar Navigation -->
+    <header class="top-header">
+      <div class="container header-container">
+        <div class="brand">
+          <div class="brand-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h1 class="brand-title">Progresso Projeto Hub</h1>
+            <span class="brand-subtitle">Auditoria e Conformidade com o Template Oficial Web III · FATEC Olímpia</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="themeToggle" class="btn-icon" title="Alternar tema claro/escuro" aria-label="Alternar tema">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <a href="https://github.com/web3-fatec-olimpia-2026-2/template-projeto" target="_blank" rel="noopener noreferrer" class="btn btn-outline" title="Ver template base do professor">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            Template Original
+          </a>
+          <a href="https://github.com/MrSautchuk/WEB-III---Project" target="_blank" rel="noopener noreferrer" class="btn btn-primary" title="Repositório do Hub Central">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            Hub Repo
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero / Progress Section -->
+    <section class="progress-hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="status-badge" id="heroStatusBadge">Em Adequação ao Template</div>
+            <h2 class="hero-title">Controle Interativo de Entregáveis</h2>
+            <p class="hero-desc">
+              Este painel mapeia com precisão cada requisito estipulado pelo professor no repositório base de <strong>Web III</strong>. Marque ou desmarque os itens conforme as entregas avançam — todo o progresso é <strong>salvo automaticamente</strong> no seu navegador.
+            </p>
+            <div class="progress-meta">
+              <span id="progressText">0 de 0 tarefas concluídas (0%)</span>
+              <span class="save-status" id="saveStatus">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Salvo localmente
+              </span>
+            </div>
+            <div class="progress-bar-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="progressBarWrapper">
+              <div class="progress-bar-fill" id="progressBarFill" style="width: 0%"></div>
+            </div>
+          </div>
+
+          <!-- KPI Cards -->
+          <div class="stats-cards">
+            <div class="stat-card">
+              <div class="stat-value" id="statTotal">28</div>
+              <div class="stat-label">Total de Itens</div>
+              <div class="stat-sub">Mapeamento Completo</div>
+            </div>
+            <div class="stat-card stat-success">
+              <div class="stat-value" id="statConcluidos">8</div>
+              <div class="stat-label">Concluídos</div>
+              <div class="stat-sub">Prontos & Auditados</div>
+            </div>
+            <div class="stat-card stat-pending">
+              <div class="stat-value" id="statPendentes">20</div>
+              <div class="stat-label">Pendentes</div>
+              <div class="stat-sub">Ações Prioritárias</div>
+            </div>
+            <div class="stat-card stat-accent">
+              <div class="stat-value" id="statPercent">29%</div>
+              <div class="stat-label">Conformidade</div>
+              <div class="stat-sub">Métrica Geral</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters & Toolbar -->
+    <section class="toolbar-section">
+      <div class="container">
+        <div class="toolbar-wrapper">
+          <div class="search-box">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="searchInput" placeholder="Pesquisar requisito, arquivo, tag ou palavra-chave..." aria-label="Pesquisar">
+            <button id="clearSearch" class="btn-clear hidden" title="Limpar pesquisa">&times;</button>
+          </div>
+
+          <div class="toolbar-actions">
+            <div class="view-filters" id="statusFilterGroup">
+              <button class="filter-btn active" data-filter="todos">Todos (<span id="countTodos">0</span>)</button>
+              <button class="filter-btn" data-filter="pendentes">Pendentes (<span id="countPendentes">0</span>)</button>
+              <button class="filter-btn" data-filter="concluidos">Concluídos (<span id="countConcluidos">0</span>)</button>
+            </div>
+
+            <div class="util-dropdown">
+              <button id="btnBulkActions" class="btn btn-outline" title="Ações em massa">
+                Opções
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="dropdown-menu hidden" id="dropdownMenu">
+                <button class="dropdown-item" id="btnMarcarTodos">Marcar Todos como Concluídos</button>
+                <button class="dropdown-item" id="btnDesmarcarTodos">Desmarcar Todos</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" id="btnExportarJson">Exportar Progresso (JSON)</button>
+                <button class="dropdown-item" id="btnImportarJson">Importar Progresso (JSON)</button>
+                <button class="dropdown-item" id="btnResetarPadrao">Resetar para o Padrão da Análise</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" onclick="window.print()">Imprimir / Salvar PDF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="category-pills" id="categoryPills">
+          <button class="pill active" data-cat="todas">Todas as Categorias</button>
+          <button class="pill" data-cat="governanca">🏛️ Governança & Comunidade</button>
+          <button class="pill" data-cat="cicd">⚙️ CI/CD & Segurança GitHub</button>
+          <button class="pill" data-cat="documentacao">📚 Documentação & README</button>
+          <button class="pill" data-cat="dependencias">📦 Dependências (requirements.txt)</button>
+          <button class="pill" data-cat="testes">🧪 Testes & Pytest Coverage</button>
+          <button class="pill" data-cat="configuracoes">🔐 Ambiente & Gitignore</button>
+          <button class="pill" data-cat="arquitetura">🧱 Arquitetura & Backend</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Checklist Section -->
+    <main class="checklist-section">
+      <div class="container">
+        <div id="checklistContainer" class="items-list">
+          <!-- Dynamic rendering through app.js -->
+        </div>
+
+        <div id="emptyState" class="empty-state hidden">
+          <div class="empty-icon">🔍</div>
+          <h3>Nenhum item encontrado</h3>
+          <p>Tente ajustar os filtros de status, categoria ou limpar o termo digitado na barra de pesquisa.</p>
+          <button class="btn btn-outline" id="btnResetFilters">Limpar Filtros</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Hidden file input for JSON import -->
+    <input type="file" id="importFileInput" accept=".json" style="display:none">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container footer-content">
+        <div>
+          <strong>Hub Central de Marketplaces</strong> — Disciplina de Desenvolvimento Web III (2026/2)<br>
+          <span class="text-muted">FATEC Olímpia · CST em Desenvolvimento de Software Multiplataforma</span>
+        </div>
+        <div class="footer-links">
+          <span>Hospedado via <strong>GitHub Pages</strong></span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
